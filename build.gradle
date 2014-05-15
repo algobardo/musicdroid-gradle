@@ -20,10 +20,7 @@ apply plugin: 'android'
 
 dependencies {
     compile 'com.android.support:support-v4:19.0.+'
-    compile fileTree(dir: 'Musicdroid/libs', include: '*.jar')
-
-    androidTestCompile fileTree(dir: 'MusicdroidUITest/libs', include: '*.jar')
-    androidTestCompile 'com.jayway.android.robotium:robotium:4.2'
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
@@ -36,27 +33,5 @@ android {
         packageName "org.catrobat.catroid"
         testPackageName "org.catrobat.musicdroid.uitest"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
-    }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'Musicdroid/AndroidManifest.xml'
-            java.srcDirs = ['Musicdroid/src']
-            resources.srcDirs = ['Musicdroid/src']
-            aidl.srcDirs = ['Musicdroid/src']
-            renderscript.srcDirs = ['Musicdroid/src']
-            res.srcDirs = ['Musicdroid/res']
-        }
-
-        androidTest {
-            java.srcDirs = ['MusicdroidUiTest/src']
-            resources.srcDirs = ['MusicdroidUiTest/src']
-            aidl.srcDirs = ['MusicdroidUiTest/src']
-            renderscript.srcDirs = ['MusicdroidUiTest/src']
-            res.srcDirs = ['MusicdroidUiTest/res']
-            assets.srcDirs = ['MusicdroidUiTest/assets']
-        }
-        
-        
     }
 }

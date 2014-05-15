@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Catroid: An on-device visual programming system for Android devices
+   Copyright (C) 2010-2013 The Catrobat Team
+   (<http://developer.catrobat.org/credits>)
+   
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as
+   published by the Free Software Foundation, either version 3 of the
+   License, or (at your option) any later version.
+  
+   An additional term exception under section 7 of the GNU Affero
+   General Public License, version 3, is available at
+   http://www.catroid.org/catroid/licenseadditionalterm
+  
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+   GNU Affero General Public License for more details.
+  
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_category_soundmixer_title">
+        <Preference
+            android:key="preferences_max_soundmixer_length"
+            android:summary="@string/preferences_max_soundmixer_length_summary"
+            android:title="@string/preferences_max_soundmixer_length_title" />
+        <Preference
+            android:key="preferences_bpm"
+            android:summary="@string/preferences_bpm_summary"
+            android:title="@string/preferences_bpm_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_category_recorder_title">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_playback"
+            android:summary="@string/preferences_playback_summary"
+            android:title="@string/preferences_playback" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="preferences_add_at_current_position"
+            android:summary="@string/preferences_add_at_current_position_summary"
+            android:title="@string/preferences_add_at_current_position" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_draw_notes_title">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preferences_draw_notes_bass_key"
+            android:summary="@string/preferences_draw_notes_bass_key_summary"
+            android:title="@string/preferences_draw_notes_bass_key" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_category_sound_title">
+        <Preference
+            android:summary="@string/preferences_set_bpm_summary"
+            android:title="@string/preferences_set_bpm_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

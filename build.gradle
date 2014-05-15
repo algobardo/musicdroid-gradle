@@ -1,0 +1,62 @@
+import java.util.regex.Pattern
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.10.+'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'android'
+
+
+dependencies {
+    compile 'com.android.support:support-v4:19.0.+'
+    compile fileTree(dir: 'Musicdroid/libs', include: '*.jar')
+
+    androidTestCompile fileTree(dir: 'MusicdroidUITest/libs', include: '*.jar')
+    androidTestCompile 'com.jayway.android.robotium:robotium:4.2'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 19
+        packageName "org.catrobat.catroid"
+        testPackageName "org.catrobat.musicdroid.uitest"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'Musicdroid/AndroidManifest.xml'
+            java.srcDirs = ['Musicdroid/src']
+            resources.srcDirs = ['Musicdroid/src']
+            aidl.srcDirs = ['Musicdroid/src']
+            renderscript.srcDirs = ['Musicdroid/src']
+            res.srcDirs = ['Musicdroid/res']
+        }
+
+        androidTest {
+            java.srcDirs = ['MusicdroidUiTest/src']
+            resources.srcDirs = ['MusicdroidUiTest/src']
+            aidl.srcDirs = ['MusicdroidUiTest/src']
+            renderscript.srcDirs = ['MusicdroidUiTest/src']
+            res.srcDirs = ['MusicdroidUiTest/res']
+            assets.srcDirs = ['MusicdroidUiTest/assets']
+        }
+        
+        
+    }
+}
